@@ -18,12 +18,10 @@ function generateInsult() {
 */
 
 function runProductions(list) {
-	console.log(list);
 	var newList = new Array();
 	var allTerminals = true;
 
 	list.forEach((symbol) => {
-		console.log(symbol);
 		if (symbol.terminal) {
 			newList.push(symbol);
 		} else {
@@ -63,10 +61,16 @@ function selectProduction(productions) {
 	Nonterminals
 */
 
-class Insult {
+class Nonterminal {
 	constructor() {
 		this.terminal = false;
 		this.resolve = () => selectProduction(this.productions);
+	}
+}
+
+class Insult extends Nonterminal {
+	constructor() {
+		super();
 		this.productions =
 		[
 			[A],
@@ -82,23 +86,29 @@ class Insult {
 	Terminals
 */
 
-class Space {
+class Terminal {
 	constructor() {
 		this.terminal = true;
+	}
+}
+
+class Space extends Terminal {
+	constructor() {
+		super();
 		this.value = " ";
 	}
 }
 
-class A {
+class A extends Terminal {
 	constructor() {
-		this.terminal = true;
+		super();
 		this.value = "A";
 	}
 }
 
-class B {
+class B extends Terminal {
 	constructor() {
-		this.terminal = true;
+		super();
 		this.value = "B";
 	}
 }
