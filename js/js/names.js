@@ -82,8 +82,13 @@ tokens.push(new Token(
 		"<aroundInsult>",
 		"<oneWordInsult>",
 		"<cannotInsult>",
-		"<worthyInsult>"
+		"<worthyInsult>",
+		"<twoSentenceInsult>"
 	]));
+
+tokens.push(new Token(
+	"<twoSentenceInsult>",
+	["<name> and <name> have the gall to <directObjectVerbPhrase>. What's worse, <randomSentence>."]));
 
 tokens.push(new Token(
 	"<worthyInsult>",
