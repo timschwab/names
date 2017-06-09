@@ -1,3 +1,10 @@
+/*
+	Global vars
+
+	productions: a list of key-value pairs, where the key is the
+	symbol, and the value of a list of replacements
+*/
+var tokens = new Array();
 
 
 /*
@@ -5,10 +12,18 @@
 */
 
 function generateInsult() {
-	var terminals = runProductions([new Insult]);
-	var insult = resolveTerminals(terminals);
+	var insult = "<Insult>";
 
-	return insult;
+	var allTerminals = true;
+	while (allTerminals) {
+		allTerminals = true;
+		tokens.forEach((token) => {
+			if (insult.includes(token.key)) {
+				allTerminals = false;
+				insult.replace(token.key, token.resolve());
+			}
+		});
+	}
 }
 
 
@@ -55,6 +70,20 @@ function randomElement(list) {
 /*
 	Nonterminals
 */
+
+function Token(key, values) {
+	this.key = key;
+	this.values = values;
+	this.resolve = () => {
+		return randomElement(this.values);
+	}
+}
+
+tokens.push(new Token(
+	"<Insult>",
+	["<Insult> <Insult>", "A", "B"]));
+
+
 
 class Nonterminal {
 	constructor() {
