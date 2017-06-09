@@ -6,6 +6,19 @@
 */
 var tokens = new Array();
 
+function insulterInit(){
+	var words;
+	$.ajax({
+    type: "POST",
+    url: "php/get-data.php",
+    success : function(words){
+		  words.forEach(function(type){
+		  	console.log(words[type]);
+		  });
+
+		}
+  });
+}
 
 /*
 	Main function
