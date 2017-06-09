@@ -11,11 +11,13 @@ function insulterInit(){
 	$.ajax({
     type: "POST",
     url: "php/get-data.php",
-    success : function(words){
-		  words.forEach(function(type){
-		  	console.log(words[type]);
-		  });
-
+    success : function(result){
+    	words = JSON.parse(result);
+		  for(var key in words){
+		  	if(words.hasOwnProperty(key)){
+		  		tokens.push(new Token(key, words[key]));
+		  	}
+		  }
 		}
   });
 }
