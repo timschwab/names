@@ -74,7 +74,7 @@ tokens["<insult>"] = [
 		"<moreInsult>",
 		"<aroundInsult>",
 		"<oneWordInsult>",
-		"<cannotInsult>",
+		"<nounInsult>",
 		"<worthyInsult>",
 		"<gallInsult>",
 		"<twoSentenceInsult>"
@@ -89,8 +89,8 @@ tokens["<gallInsult>"] = [
 tokens["<worthyInsult>"] = [
 	"<name> is not even <adjectivePhrase> enough to be called a <noun>."];
 
-tokens["<cannotInsult>"] = [
-	"<name>'s <noun> is so <adjectivePhrase>, I cannot begin to <directObjectVerbPhrase>."];
+tokens["<nounInsult>"] = [
+	"<name>'s <noun> is so <adjectivePhrase>, it <directObjectVerbPhrase>."];
 
 tokens["<aroundInsult>"] = [
 	"When the <noun> is around, <name> is a real <noun>."
