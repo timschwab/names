@@ -84,7 +84,7 @@ tokens["<twoSentenceInsult>"] = [
 	"<insult> You know what else? <insult>"];
 
 tokens["<gallInsult>"] = [
-"<name> and <name> have the gall to <directObjectVerbPhrase>. They have no shame."];
+"<name> and <name> have the gall to be <prepositionalPhrase>. They have no shame."];
 
 tokens["<worthyInsult>"] = [
 	"<name> is not even <adjectivePhrase> enough to be called a <noun>."];
