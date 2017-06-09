@@ -6,6 +6,10 @@
 */
 var tokens = new Array();
 
+
+/*
+	Initialize the list of tokens
+*/
 function insulterInit(){
 	var words;
 	$.ajax({
@@ -25,9 +29,8 @@ function insulterInit(){
 /*
 	Main function
 */
-
 function generateInsult() {
-	var insult = "<Insult>";
+	var insult = "<insult>";
 	var allTerminals = false;
 	while (!allTerminals) {
 		allTerminals = true
@@ -62,49 +65,49 @@ function Token(key, values) {
 */
 
 tokens.push(new Token(
-	"<Insult>",
+	"<insult>",
 	[
-		"<RandomSentence>",
-		"<Classic>",
-		"<InterjectionInsult>",
-		"<PrepositionInsult>",
-		"<NeverGetAlongInsult>",
-		"<AfraidInsult>",
-		"<MoreInsult>",
-		"<AroundInsult>"
+		"<randomSentence>",
+		"<classic>",
+		"<interjectionInsult>",
+		"<prepositionInsult>",
+		"<neverGetAlongInsult>",
+		"<afraidInsult>",
+		"<moreInsult>",
+		"<aroundInsult>"
 	]));
 
 tokens.push(new Token(
-	"<AroundInsult>",
-	["When the <Noun> is around, <Name> is a real <Noun>."]));
+	"<aroundInsult>",
+	["When the <noun> is around, <name> is a real <noun>."]));
 
 tokens.push(new Token(
-	"<MoreInsult>",
-	["<Name> is more <AdjectivePhrase> than a <NounPhrase>!"]));
+	"<moreInsult>",
+	["<name> is more <adjectivePhrase> than a <nounPhrase>!"]));
 
 tokens.push(new Token(
-	"<AfraidInsult>",
-	["<Name> is afraid of the <NounPhrase>."]));
+	"<afraidInsult>",
+	["<name> is afraid of the <nounPhrase>."]));
 
 tokens.push(new Token(
-	"<NeverGetAlongInsult>",
-	["<Name> and the <Noun> never get along."]));
+	"<neverGetAlongInsult>",
+	["<name> and the <noun> never get along."]));
 
 tokens.push(new Token(
-	"<PrepositionInsult>",
-	["I heard that <PrepositionalPhrase>, <Name> always <Verb>."]));
+	"<prepositionInsult>",
+	["I heard that <prepositionalPhrase>, <name> always <verb>."]));
 
 tokens.push(new Token(
-	"<InterjectionInsult>",
-	["<Interjection>! It's that <Name> again."]));
+	"<interjectionInsult>",
+	["<interjection>! It's that <name> again."]));
 
 tokens.push(new Token(
-	"<Classic>",
-	["<Name> is a <NounPhrase>."]));
+	"<classic>",
+	["<name> is a <nounPhrase>."]));
 
 tokens.push(new Token(
-	"<RandomSentence>",
-	["<SubjectPhrase> <VerbPhrase>."]));
+	"<randomSentence>",
+	["<subjectPhrase> <verbPhrase>."]));
 
 
 
@@ -113,61 +116,45 @@ tokens.push(new Token(
 */
 
 tokens.push(new Token(
-	"<SubjectPhrase>",
-	["<Name>", "The <AdjectivePhrase> <Name>", "<Name>, <PrepositionalPhrase>, "]));
+	"<subjectPhrase>",
+	["<name>", "The <sdjectivePhrase> <name>", "<name>, <prepositionalPhrase>, "]));
 
 tokens.push(new Token(
-	"<AdjectivePhrase>",
-	["<Adjective>", "<Adverb> <Adjective>"]));
+	"<adjectivePhrase>",
+	["<adjective>", "<adverb> <adjective>"]));
 
 tokens.push(new Token(
-	"<PrepositionalPhrase>",
-	["<Preposition> the <NounPhrase>"]));
+	"<prepositionalPhrase>",
+	["<preposition> the <nounPhrase>"]));
 
 tokens.push(new Token(
-	"<NounPhrase>",
-	["<Noun>", "<AdjectivePhrase> <Noun>"]));
+	"<nounPhrase>",
+	["<noun>", "<adjectivePhrase> <noun>"]));
 
 tokens.push(new Token(
-	"<VerbPhrase>",
-	["<SimpleVerbPhrase>", "<DirectObjectVerbPhrase>"]));
+	"<verbPhrase>",
+	["<simpleVerbPhrase>", "<directObjectverbPhrase>"]));
 
 tokens.push(new Token(
-	"<SimpleVerbPhrase>",
-	["<Verb>", "<Adverb> <Verb>"]));
+	"<simpleVerbPhrase>",
+	["<verb>", "<adverb> <verb>"]));
 
 tokens.push(new Token(
-	"<DirectObjectVerbPhrase>",
-	["<DirectObjectVerb> the <NounPhrase>", "<Adverb> <DirectObjectVerb> the <NounPhrase>"]));
+	"<directObjectverbPhrase>",
+	["<directObjectverb> the <nounPhrase>", "<adverb> <directObjectVerb> the <nounPhrase>"]));
 
 
 
 /*
-	Terminals
+	Terminals. These will all be moved to the database.
 */
 
 tokens.push(new Token(
-	"<Name>",
-	[
-		"Brian Seidel",
-		"Eric Ward",
-		"Kerry Meade",
-		"Chris Bradley",
-		"Bruce Brown",
-		"Spencer Patrick",
-		"Richard Looper",
-		"Danny Mecca",
-		"Doug MacMillan",
-		"Liz George",
-		"Gary Lamb",
-		"Jack Evans",
-		"Charles Tennent",
-		"Sabrina Milnes",
-		"Robby Flair"
-	]));
+	"<name>",
+	["Tim", "Ben"]));
 
 tokens.push(new Token(
-	"<Noun>",
+	"<noun>",
 	[
 		"octopus",
 		"distraction",
@@ -177,7 +164,7 @@ tokens.push(new Token(
 	]));
 
 tokens.push(new Token(
-	"<Verb>",
+	"<verb>",
 	[
 		"laughs",
 		"complains",
@@ -187,7 +174,7 @@ tokens.push(new Token(
 	]));
 
 tokens.push(new Token(
-	"<DirectObjectVerb>",
+	"<directObjectVerb>",
 	[
 		"avoids",
 		"does not like",
@@ -196,7 +183,7 @@ tokens.push(new Token(
 	]));
 
 tokens.push(new Token(
-	"<Adjective>",
+	"<adjective>",
 	[
 		"indescribable",
 		"upside-down",
@@ -207,7 +194,7 @@ tokens.push(new Token(
 	]));
 
 tokens.push(new Token(
-	"<Adverb>",
+	"<adverb>",
 	[
 		"tremendously",
 		"awkwardly",
@@ -217,7 +204,7 @@ tokens.push(new Token(
 	]));
 
 tokens.push(new Token(
-	"<Preposition>",
+	"<preposition>",
 	[
 		"with",
 		"amongst",
@@ -227,7 +214,7 @@ tokens.push(new Token(
 	]));
 
 tokens.push(new Token(
-	"<Interjection>",
+	"<interjection>",
 	[
 		"Great googly moogly",
 		"Oh my",
