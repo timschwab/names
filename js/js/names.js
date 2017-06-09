@@ -32,6 +32,11 @@ function insulterInit(){
 
 /*
 	Main function
+
+	Begin with the top-level token, <insult>. Then iterate through all the
+	tokens, to try and find tokens to repace. Does this over and over until
+	no tokens are found. It is an implementation of a standard context-free
+	grammar.
 */
 function generateInsult() {
 	var insult = "<insult>";
@@ -144,8 +149,6 @@ tokens["<directObjectverbPhrase>"] = [
 	"<directObjectverb> the <nounPhrase>", 
 	"<adverb> <directObjectVerb> the <nounPhrase>"
 	];
-
-
 
 /*
 	Terminals. These will all be moved to the database.
