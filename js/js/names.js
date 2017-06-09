@@ -38,14 +38,12 @@ function insulterInit(){
 	no tokens are found. It is an implementation of a standard context-free
 	grammar.
 */
-function generateInsult() {
-	var insult = "<insult>";
+function generateInsult(insult) {
 	var allTerminals = false;
-
 	while(!allTerminals){
 		allTerminals = true;
 		for(var key in tokens){
-			if(tokens.hasOwnProperty(key)){
+			if(tokens.hasOwnProperty(key)){ // Make sure it is one of ours, not a super type's
 				if(insult.includes(key)){
 					allTerminals = false;
 					insult = insult.replace(key, randomElement(tokens[key]));
@@ -76,19 +74,23 @@ tokens["<insult>"] = [
 		"<moreInsult>",
 		"<aroundInsult>",
 		"<oneWordInsult>",
-		"<cannotInsult>",
+		"<nounInsult>",
 		"<worthyInsult>",
+		"<gallInsult>",
 		"<twoSentenceInsult>"
 	];
 
 tokens["<twoSentenceInsult>"] = [
-	"<name> and <name> have the gall to <directObjectVerbPhrase>. You know what else? <insult>"];
+	"<insult> You know what else? <insult>"];
+
+tokens["<gallInsult>"] = [
+"<name> and <name> have the gall to be <prepositionalPhrase>. They have no shame."];
 
 tokens["<worthyInsult>"] = [
 	"<name> is not even <adjectivePhrase> enough to be called a <noun>."];
 
-tokens["<cannotInsult>"] = [
-	"<name>'s <noun> is so <adjectivePhrase>, I cannot begin to <directObjectVerbPhrase>."];
+tokens["<nounInsult>"] = [
+	"<name>'s <noun> is so <adjectivePhrase>, it <directObjectVerbPhrase>."];
 
 tokens["<aroundInsult>"] = [
 	"When the <noun> is around, <name> is a real <noun>."
