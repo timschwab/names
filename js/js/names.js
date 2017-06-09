@@ -32,11 +32,6 @@ function randomElement(list) {
 	return list[n];
 }
 
-
-/*
-	Nonterminals
-*/
-
 function Token(key, values) {
 	this.key = key;
 	this.values = values;
@@ -45,9 +40,62 @@ function Token(key, values) {
 	}
 }
 
+
+
+/*
+	Sentence forms
+*/
+
 tokens.push(new Token(
 	"<Insult>",
+	[
+		"<RandomSentence>",
+		"<Classic>",
+		"<InterjectionInsult>",
+		"<PrepositionInsult>",
+		"<NeverGetAlongInsult>",
+		"<AfraidInsult>",
+		"<MoreInsult>",
+		"<AroundInsult>"
+	]));
+
+tokens.push(new Token(
+	"<AroundInsult>",
+	["When the <Noun> is around, <Name> is a real <Noun>."]));
+
+tokens.push(new Token(
+	"<MoreInsult>",
+	["<Name> is more <AdjectivePhrase> than a <NounPhrase>!"]));
+
+tokens.push(new Token(
+	"<AfraidInsult>",
+	["<Name> is afraid of the <NounPhrase>."]));
+
+tokens.push(new Token(
+	"<NeverGetAlongInsult>",
+	["<Name> and the <Noun> never get along."]));
+
+tokens.push(new Token(
+	"<PrepositionInsult>",
+	["I heard that <PrepositionalPhrase>, <Name> always <Verb>."]));
+
+tokens.push(new Token(
+	"<InterjectionInsult>",
+	["<Interjection>! It's that <Name> again."]));
+
+tokens.push(new Token(
+	"<Classic>",
+	["<Name> is a <NounPhrase>."]));
+
+tokens.push(new Token(
+	"<RandomSentence>",
 	["<SubjectPhrase> <VerbPhrase>."]));
+
+
+
+/*
+	Nonterminals
+*/
 
 tokens.push(new Token(
 	"<SubjectPhrase>",
@@ -85,30 +133,97 @@ tokens.push(new Token(
 
 tokens.push(new Token(
 	"<Name>",
-	["Tim", "Ben", "Andrew", "Will", "Dorothy"]));
+	[
+		"Brian Seidel",
+		"Eric Ward",
+		"Kerry Meade",
+		"Chris Bradley",
+		"Bruce Brown",
+		"Spencer Patrick",
+		"Richard Looper",
+		"Danny Mecca",
+		"Doug MacMillan",
+		"Liz George",
+		"Gary Lamb",
+		"Jack Evans",
+		"Charles Tennent",
+		"Sabrina Milnes",
+		"Robby Flair"
+	]));
 
 tokens.push(new Token(
 	"<Noun>",
-	["octopus", "distraction", "philosopher", "advantage", "wallpaper"]));
+	[
+		"octopus",
+		"distraction",
+		"philosopher",
+		"road sign",
+		"wallpaper"
+	]));
 
 tokens.push(new Token(
 	"<Verb>",
-	["laughs", "complains", "tumbles", "explodes", "leaves the area"]));
+	[
+		"laughs",
+		"complains",
+		"tumbles",
+		"withers",
+		"leaves the area"
+	]));
 
 tokens.push(new Token(
 	"<DirectObjectVerb>",
-	["avoids", "does not like", "laughs at", "is perplexed by"]));
+	[
+		"avoids",
+		"does not like",
+		"laughs at",
+		"is perplexed by"
+	]));
 
 tokens.push(new Token(
 	"<Adjective>",
-	["indescribable", "upside-down", "uncomfortable", "silly", "nauseating", "miniscule"]));
+	[
+		"indescribable",
+		"upside-down",
+		"uncomfortable",
+		"silly",
+		"nauseating",
+		"tiny"
+	]));
 
 tokens.push(new Token(
 	"<Adverb>",
-	["tremendously", "awkwardly", "occasionally", "preposterously", "dejectedly"]));
+	[
+		"tremendously",
+		"awkwardly",
+		"often",
+		"preposterously",
+		"dejectedly"
+	]));
 
 tokens.push(new Token(
 	"<Preposition>",
-	["with", "amongst", "by means of", "despite", "underneath"]));
+	[
+		"with",
+		"amongst",
+		"by means of",
+		"despite",
+		"underneath"
+	]));
+
+tokens.push(new Token(
+	"<Interjection>",
+	[
+		"Great googly moogly",
+		"Oh my",
+		"Well, I never",
+		"Would you look at that",
+		"Zounds",
+		"Lab rats",
+		"Poppy seeds",
+		"Ah",
+		"Can you imagine",
+		"I can't even"
+	]));
 
 
