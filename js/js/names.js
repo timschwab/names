@@ -75,9 +75,85 @@ class Insult extends Nonterminal {
 		super();
 		this.productions =
 		[
-			[A],
-			[B],
-			[Insult, Space, Insult]
+			[SubjectPhrase, Space, VerbPhrase, Punctuation]
+		];
+	}
+}
+
+class SubjectPhrase extends Nonterminal {
+	constructor() {
+		super();
+		this.productions =
+		[
+			[Name],
+			[CapitalThe, Space, AdjectivePhrase, Space, Name],
+			[Name, Comma, Space, PrepositionalPhrase, Comma, Space]
+		];
+	}
+}
+
+class AdjectivePhrase extends Nonterminal {
+	constructor() {
+		super();
+		this.productions =
+		[
+			[Adjective],
+			[Adverb, Space, Adjective]
+		];
+	}
+}
+
+class PrepositionalPhrase extends Nonterminal {
+	constructor() {
+		super();
+		this.productions =
+		[
+			[Preposition, Space, The, Space, NounPhrase]
+		];
+	}
+}
+
+class NounPhrase extends Nonterminal {
+	constructor() {
+		super();
+		this.productions =
+		[
+			[Noun],
+			[AdjectivePhrase, Space, Noun]
+		];
+	}
+}
+
+class VerbPhrase extends Nonterminal {
+	constructor() {
+		super();
+		this.productions =
+		[
+			[SimpleVerbPhrase],
+			[DirectObjectVerbPhrase]
+		];
+	}
+}
+
+class SimpleVerbPhrase extends Nonterminal {
+	constructor() {
+		super();
+		this.productions =
+		[
+			[Verb],
+			[Adverb, Space, Verb],
+			[Verb, Space, Adverb]
+		];
+	}
+}
+
+class DirectObjectVerbPhrase extends Nonterminal {
+	constructor() {
+		super();
+		this.productions =
+		[
+			[DirectObjectVerb, Space, The, Space, NounPhrase],
+			[Adverb, Space, DirectObjectVerb, Space, The, Space, NounPhrase]
 		];
 	}
 }
@@ -102,17 +178,125 @@ class Space extends Terminal {
 	}
 }
 
-class A extends Terminal {
+class Punctuation extends Terminal {
 	constructor() {
 		super();
-		this.values = ["A"];
+		this.values = ["."];
 	}
 }
 
-class B extends Terminal {
+class Comma extends Terminal {
 	constructor() {
 		super();
-		this.values = ["B"];
+		this.values = [","];
 	}
 }
+
+class The extends Terminal {
+	constructor() {
+		super();
+		this.values = ["the"];
+	}
+}
+
+class CapitalThe extends Terminal {
+	constructor() {
+		super();
+		this.values = ["The"];
+	}
+}
+
+class Name extends Terminal {
+	constructor() {
+		super();
+		this.values = [
+			"Tim",
+			"Ben",
+			"Andrew",
+			"Will",
+			"Dorothy"
+		];
+	}
+}
+
+class Noun extends Terminal {
+	constructor() {
+		super();
+		this.values = [
+			"octopus",
+			"distraction",
+			"philosopher",
+			"advantage",
+			"wallpaper"
+		];
+	}
+}
+
+class Verb extends Terminal {
+	constructor() {
+		super();
+		this.values = [
+			"laughs",
+			"whines",
+			"tumbles",
+			"explodes",
+			"leaves the area"
+		];
+	}
+}
+
+class DirectObjectVerb extends Terminal {
+	constructor() {
+		super();
+		this.values = [
+			"avoids",
+			"does not like",
+			"laughs at",
+			"is perplexed by",
+			"is"
+		];
+	}
+}
+
+class Adjective extends Terminal {
+	constructor() {
+		super();
+		this.values = [
+			"indescribable",
+			"upside-down",
+			"uncomfortable",
+			"silly",
+			"nauseating",
+			"miniscule"
+		];
+	}
+}
+
+class Adverb extends Terminal {
+	constructor() {
+		super();
+		this.values = [
+			"tremendously",
+			"awkwardly",
+			"occasionally",
+			"preposterously",
+			"quite",
+			"dejectedly"
+		];
+	}
+}
+
+class Preposition extends Terminal {
+	constructor() {
+		super();
+		this.values = [
+			"with",
+			"amongst",
+			"by means of",
+			"despite",
+			"underneath"
+		];
+	}
+}
+
 
