@@ -24,9 +24,25 @@
       </div>
       <div class="row">
         <div class="col-md-12 text-center">
-          <button id="insult-button" class="btn btn-primary">New Insult</button>
+          <button id="random-button" class="btn btn-primary">Random Insult</button>
         </div>
       </div>
+
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <h3>--- OR ---</h3>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-8">
+            <input type="text" class="form-control" id="string_input" placeholder="<name> is a <noun>.">
+        </div>
+        <div class="col-sm-2">
+          <button id="complete-button" class="btn btn-primary">Finish Them!</button>
+        </div>
+      </div>
+
       <div class="row">
         <div class="col-md-12 text-center">
           <p id="insult-content"><p> 
@@ -57,8 +73,12 @@
     </script>
     <script src="js/names.js"></script>
     <script type="text/javascript">
-      $("#insult-button").click(function(event){
-        $("#insult-content").html(generateInsult());
+      $("#random-button").click(function(event){
+        $("#insult-content").html(generateInsult("<insult>"));
+      });
+
+      $("#complete-button").click(function(event){
+        $("#insult-content").html(generateInsult($("#string_input").val()));
       });
     
       insulterInit();
