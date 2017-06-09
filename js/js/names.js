@@ -28,6 +28,11 @@ function insulterInit(){
 
 /*
 	Main function
+
+	Begin with the top-level token, <insult>. Then iterate through all the
+	tokens, to try and find tokens to repace. Does this over and over until
+	no tokens are found. It is an implementation of a standard context-free
+	grammar.
 */
 function generateInsult() {
 	var insult = "<insult>";
@@ -74,8 +79,23 @@ tokens.push(new Token(
 		"<neverGetAlongInsult>",
 		"<afraidInsult>",
 		"<moreInsult>",
-		"<aroundInsult>"
+		"<aroundInsult>",
+		"<oneWordInsult>",
+		"<cannotInsult>",
+		"<worthyInsult>"
 	]));
+
+tokens.push(new Token(
+	"<worthyInsult>",
+	["<name> is not even <adjectivePhrase> enough to be called a <noun>."]));
+
+tokens.push(new Token(
+	"<cannotInsult>",
+	["<name>'s <noun> is so <adjectivePhrase>, I cannot begin to <directObjectVerbPhrase>."]));
+
+tokens.push(new Token(
+	"<oneWordInsult>",
+	["<name> is such a <nounPhrase>."]));
 
 tokens.push(new Token(
 	"<aroundInsult>",
@@ -117,7 +137,7 @@ tokens.push(new Token(
 
 tokens.push(new Token(
 	"<subjectPhrase>",
-	["<name>", "The <sdjectivePhrase> <name>", "<name>, <prepositionalPhrase>, "]));
+	["<name>", "The <adjectivePhrase> <name>", "<name>, <prepositionalPhrase>, "]));
 
 tokens.push(new Token(
 	"<adjectivePhrase>",
@@ -133,15 +153,15 @@ tokens.push(new Token(
 
 tokens.push(new Token(
 	"<verbPhrase>",
-	["<simpleVerbPhrase>", "<directObjectverbPhrase>"]));
+	["<simpleVerbPhrase>", "<directObjectVerbPhrase>"]));
 
 tokens.push(new Token(
 	"<simpleVerbPhrase>",
 	["<verb>", "<adverb> <verb>"]));
 
 tokens.push(new Token(
-	"<directObjectverbPhrase>",
-	["<directObjectverb> the <nounPhrase>", "<adverb> <directObjectVerb> the <nounPhrase>"]));
+	"<directObjectVerbPhrase>",
+	["<directObjectVerb> the <nounPhrase>"]));
 
 
 
