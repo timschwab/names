@@ -8,15 +8,15 @@
 
   // query strings
   $queries = array(
-    "nouns" => "SELECT * FROM nouns",
-    "names" =>  "SELECT * FROM names",
-    "adjs" => "SELECT * FROM adjectives");
+    "<Noun>" => "SELECT * FROM nouns",
+    "<Name>" =>  "SELECT * FROM names",
+    "<Adjective>" => "SELECT * FROM adjectives");
 
   // data arrays - indexes in $queries must be indexes in $data!
   $data = array(
-    "nouns" => array(),
-    "names" => array(),
-    "adjs" => array());
+    "<Noun>" => array(),
+    "<Name>" => array(),
+    "<Adjective>" => array());
 
   foreach($queries as $key => $query){
       $index = 0;

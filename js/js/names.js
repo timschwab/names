@@ -6,6 +6,21 @@
 */
 var tokens = new Array();
 
+function insulterInit(){
+	var words;
+	$.ajax({
+    type: "POST",
+    url: "php/get-data.php",
+    success : function(result){
+    	words = JSON.parse(result);
+		  for(var key in words){
+		  	if(words.hasOwnProperty(key)){
+		  		tokens.push(new Token(key, words[key]));
+		  	}
+		  }
+		}
+  });
+}
 
 /*
 	Main function
