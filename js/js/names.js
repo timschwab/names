@@ -39,20 +39,15 @@ function runProductions(list) {
 function resolveTerminals(list) {
 	var result = "";
 	list.forEach((terminal) => {
-		result += terminal.value;
+		result += terminal.value();
 	});
 
 	return result;
 }
 
-function selectProduction(productions) {
-	var n = Math.floor(Math.random() * productions.length);
-	var constructorList = productions[n];
-	var objList = [];
-	constructorList.forEach((constructor) => {
-		objList.push(new constructor);
-	});
-	return objList;
+function randomElement(list) {
+	var n = Math.floor(Math.random() * list.length);
+	return list[n];
 }
 
 
@@ -64,7 +59,14 @@ function selectProduction(productions) {
 class Nonterminal {
 	constructor() {
 		this.terminal = false;
-		this.resolve = () => selectProduction(this.productions);
+		this.resolve = () => {
+			var objList = [];
+			var constructorList = randomElement(this.productions);
+			constructorList.forEach((constructor) => {
+				objList.push(new constructor);
+			});
+			return objList;
+		};
 	}
 }
 
@@ -89,27 +91,28 @@ class Insult extends Nonterminal {
 class Terminal {
 	constructor() {
 		this.terminal = true;
+		this.value = () => randomElement(this.values);
 	}
 }
 
 class Space extends Terminal {
 	constructor() {
 		super();
-		this.value = " ";
+		this.values = [" "];
 	}
 }
 
 class A extends Terminal {
 	constructor() {
 		super();
-		this.value = "A";
+		this.values = ["A"];
 	}
 }
 
 class B extends Terminal {
 	constructor() {
 		super();
-		this.value = "B";
+		this.values = ["B"];
 	}
 }
 
