@@ -1,26 +1,25 @@
-type,word
-<verb>,laughs
-<verb>,complains
-<verb>,tumbles
-<verb>,withers
-<verb>,leaves the area
-<verb>,takes things
-<verb>,surprises
-<verb>,explores
-<verb>,advances
-<verb>,looks
-<verb>,finds things
-<verb>,philosophizes
-<verb>,moves
-<verb>,jogs
-<verb>,ambles
-<verb>,screams
-<verb>,whispers
-<verb>,greets people
-<verb>,gives the evil eye
-<verb>,asks a favor
-<verb>,shocks
-<verb>,surrounds you
-<verb>,hugs
-<verb>,pretends
-<verb>,smirks
+verb,laughs
+verb,complains
+verb,tumbles
+verb,withers
+verb,leaves the area
+verb,takes things
+verb,surprises
+verb,explores
+verb,advances
+verb,looks
+verb,finds things
+verb,philosophizes
+verb,moves
+verb,jogs
+verb,ambles
+verb,screams
+verb,whispers
+verb,greets people
+verb,gives the evil eye
+verb,asks a favor
+verb,shocks
+verb,surrounds you
+verb,hugs
+verb,pretends
+verb,smirks

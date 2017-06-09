@@ -6,27 +6,17 @@
     die("Failed to connect to database.");
   }
 
-  // query strings
-  $queries = array(
-    "<Noun>" => "SELECT * FROM nouns",
-    "<Name>" =>  "SELECT * FROM names",
-    "<Adjective>" => "SELECT * FROM adjectives");
-
-  // data arrays - indexes in $queries must be indexes in $data!
-  $data = array(
-    "<Noun>" => array(),
-    "<Name>" => array(),
-    "<Adjective>" => array());
-
-  foreach($queries as $key => $query){
-      $index = 0;
-      if($result = mysqli_query($link, $query)){
-        while($row = mysqli_fetch_array($result)){
-          $data[$key][$index] = $row[0];
-          $index++;
-        }
-      } 
-  }
-  
+  $query = "SELECT * FROM terminals";
+  $data = array();
+  if($result = mysqli_query($link, $query)){
+    while($row = mysqli_fetch_array($result)){
+      $type = $row[0];
+      $word = $row[1];
+      if(!array_key_exists($type, $data)){
+        $data[$type] = array();
+      }
+      $data[$type][] = $word;
+    }
+  }  
   echo json_encode($data);
 ?>
