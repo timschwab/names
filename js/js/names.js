@@ -8,63 +8,29 @@ var tokens = new Array();
 
 
 /*
-	Entry point
+	Main function
 */
 
 function generateInsult() {
 	var insult = "<Insult>";
-
-	var allTerminals = true;
-	while (allTerminals) {
-		allTerminals = true;
+	var allTerminals = false;
+	while (!allTerminals) {
+		allTerminals = true
 		tokens.forEach((token) => {
 			if (insult.includes(token.key)) {
 				allTerminals = false;
-				insult.replace(token.key, token.resolve());
+				insult = insult.replace(token.key, token.resolve());
 			}
 		});
 	}
-}
 
-
-
-/*
-	Logic
-*/
-
-function runProductions(list) {
-	var newList = new Array();
-	var allTerminals = true;
-
-	list.forEach((symbol) => {
-		if (symbol.terminal) {
-			newList.push(symbol);
-		} else {
-			allTerminals = false;
-			newList = newList.concat(symbol.resolve());
-		}
-	});
-
-	if (allTerminals)
-		return newList;
-	else
-		return runProductions(newList);
-}
-
-function resolveTerminals(list) {
-	var result = "";
-	list.forEach((terminal) => {
-		result += terminal.value();
-	});
-
-	return result;
+	return insult;
 }
 
 function randomElement(list) {
 	var n = Math.floor(Math.random() * list.length);
 	return list[n];
 }
-
 
 
 /*
@@ -82,6 +48,10 @@ function Token(key, values) {
 tokens.push(new Token(
 	"<Insult>",
 	["<Insult> <Insult>", "A", "B"]));
+
+
+
+
 
 
 
