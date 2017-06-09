@@ -146,7 +146,7 @@ tokens.push(new Token(
 
 
 /*
-	Terminals
+	Terminals. These will all be moved to the database.
 */
 
 tokens.push(new Token(
