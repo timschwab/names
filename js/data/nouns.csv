@@ -1,32 +1,31 @@
-type,word
-<noun>,octopus
-<noun>,distraction
-<noun>,philosopher
-<noun>,road sign
-<noun>,dish
-<noun>,sauce
-<noun>,slug
-<noun>,rod
-<noun>,hue
-<noun>,invention
-<noun>,doo-dad
-<noun>,vehicle
-<noun>,mime
-<noun>,object of interest
-<noun>,illustration
-<noun>,popsicle
-<noun>,grandfather clock
-<noun>,chime
-<noun>,half dollar
-<noun>,man
-<noun>,woman
-<noun>,souvenir
-<noun>,pickup truck
-<noun>,road
-<noun>,avalanche
-<noun>,bulb
-<noun>,leader
-<noun>,ruler
-<noun>,orange
-<noun>,orangutan
-<noun>,foundamentalist
+noun,octopus
+noun,distraction
+noun,philosopher
+noun,road sign
+noun,dish
+noun,sauce
+noun,slug
+noun,rod
+noun,hue
+noun,invention
+noun,doo-dad
+noun,vehicle
+noun,mime
+noun,object of interest
+noun,illustration
+noun,popsicle
+noun,grandfather clock
+noun,chime
+noun,half dollar
+noun,man
+noun,woman
+noun,souvenir
+noun,pickup truck
+noun,road
+noun,avalanche
+noun,bulb
+noun,leader
+noun,ruler
+noun,orange
+noun,orangutan
+noun,foundamentalist
