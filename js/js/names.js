@@ -92,6 +92,10 @@ tokens["<worthyInsult>"] = [
 tokens["<nounInsult>"] = [
 	"<name>'s <noun> is so <adjectivePhrase>, it <directObjectVerbPhrase>."];
 
+tokens["<oneWordInsult>"] = [
+	"<name> is such a <noun>."
+];
+
 tokens["<aroundInsult>"] = [
 	"When the <noun> is around, <name> is a real <noun>."
 	];
