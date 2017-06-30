@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/2002/REC-xhtml1-20020801/DTD/xhtml1-transitional.dtd">
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en'>
+	<head>
+	<meta http-equiv='content-type' content='text/html; charset=utf-8' />
+	<meta http-equiv='content-language' content='en-us' />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Names</title>
+	<script type='text/javascript'
+		src='../jquery-3.2.1.js'>
+	</script>
+	<script type='text/javascript' src='names.js'></script>
+	<link type='text/css' href='names.css' rel='stylesheet' />
+</head>
+<body>
+	<div id='main'>
+		<button id='spewnames'>Spew names</button>
+		<h1>Names:</h1>
+	</div>
+	
+	<button id="sidebar-button" onclick="$('#sidebar').toggleClass('open');$(this).toggleClass('open');"></button>
+	<div id='sidebar'>
+		<form method='post' action='names.aspx'>
+			<h2>category:</h2>
+			<div id='choose'>
+				<input type="radio" name="wordtype" value="name" id="name" checked><label for='name'>name</label>
+				<input type="radio" name="wordtype" value="noun" id='noun'><label for='noun'>noun</label>
+				<input type="radio" name="wordtype" value="adjective" id='adjective'><label for='adjective'>adjective</label>
+				<input type="radio" name="wordtype" value="adverb" id='adverb'><label for='adverb'>adverb</label>
+				<input type="radio" name="wordtype" value="phrase" id='phrase'><label for='phrase'>phrase</label>
+				<input type="radio" name="wordtype" value="sentence" id='sentence'><label for='sentence'>sentence</label>
+				<input type="radio" name="wordtype" value="suggest" id='suggest'><label for='suggest'>suggestions for Biffy</label>
+			</div>
+			<h2>word/phrase:</h2>
+			<input type='text' name='word' id='word' maxlength='100'>
+			<input type='submit' name='cmd' value='add' class='cmd'>
+			<input type='submit' name='cmd' value='delete' class='cmd'>
+		</form>
+		<h2>substitutions:</h2>
+		<ul>
+			<li>[NAME] is the tag for a name</li>
+			<li>[NOUN] is the tag for a noun</li>
+			<li>[PNOUN] is the tag for a plural noun</li>
+			<li>[ADJ] is the tag for an adjective</li>
+			<li>[ADV] is the tag for an adverb</li>
+			<li>[PHR] is the tag for an independent clause (phrase)</li>
+			<li>[SEN] is the tag for a sentence</li>
+			<li>[SEN?] is the tag for an interrogative sentence</li>
+		</ul>
+  </div>
+</body>
+</html>
